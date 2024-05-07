@@ -70,4 +70,4 @@ The output of the code above looks like this:
 startStr: 12:20 AM
 endStr: 00:20
 ```
-
+More info on the docs page: https://pomihai.github.io/childInTime/
