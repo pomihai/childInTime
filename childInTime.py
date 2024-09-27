@@ -350,8 +350,13 @@ class momentStringParser(arithmetycs):
 						bGood = iFriendDistance <= iFriendRadius
 						if bGood: letterInfo.update({'M': 2})
 			else: # here we have both D and Y
-				bGood = self.between(self.DateDPos,
-										self.DateYPos, self.DateMPos)
+				# we had a usecase where M(onth) was actually between D(ays) and Y(ear)
+				bGood = self.between(self.DateDPos, self.DateYPos, \
+							self.DateMPos) or \
+					self.between(self.DateMPos, self.DateYPos, \
+							self.DateDPos) or \
+					self.between(self.DateMPos, self.DateDPos, \
+							self.DateYPos)
 				if letterInfo['M'] == 1:
 					if not bGood: # we lost the M to the other side
 						letterInfo.update({'M': 0})
