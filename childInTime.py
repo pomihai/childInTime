@@ -1334,9 +1334,4 @@ class somewhereInTime:
 
 
 
-
-
-
-
-
 # Thank you for reading this f1l3
